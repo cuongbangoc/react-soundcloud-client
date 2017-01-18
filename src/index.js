@@ -7,6 +7,8 @@ import TrackList from './components/TrackList';
 import {configureStore} from './store';
 import * as actions from './actions';
 
+import {Provider} from 'react-redux';
+
 const tracks = [
     {
         id: 1,
@@ -22,6 +24,8 @@ const store = configureStore();
 store.dispatch(actions.setTracks(tracks));
 
 ReactDOM.render(
-    <TrackList tracks={tracks} />,
+    <Provider store={store}>
+        <TrackList tracks={tracks} />
+    </Provider>,
     document.getElementById('app')
 );
