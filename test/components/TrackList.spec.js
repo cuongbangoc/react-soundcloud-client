@@ -1,4 +1,4 @@
-import TrackList from '../../src/components/TrackList';
+import TrackList from '../../src/components/TrackList/TrackList';
 import {shallow} from 'enzyme';
 
 describe('TrackList', () => {

@@ -1,7 +1,6 @@
 import React, {Component, PropTypes} from 'react';
-import {connect} from 'react-redux';
 
-class TrackList extends Component {
+export default class TrackList extends Component {
     static propTypes = {
         tracks: PropTypes.array
     }
@@ -15,17 +14,10 @@ class TrackList extends Component {
             <div>
             {
                 this.props.tracks.map((track, key) => {
-                    return <div key={key}>Track: {track.title}</div>;
+                    return <div key={key}>Track: {track.title}</div>
                 })
             }
             </div>
         );
     }
 }
-
-function mapStateToProps(state) {
-    const tracks = state.track
-    return {tracks}
-}
-
-export default connect(mapStateToProps)(TrackList)
